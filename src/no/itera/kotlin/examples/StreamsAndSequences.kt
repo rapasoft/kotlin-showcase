@@ -40,7 +40,6 @@ fun main(args: Array<String>) {
     val timeWithoutLazy = measureTimeMillis {
         println(
                 Paths.get("./resource/sales.csv").loadFromClassPath().toFile().readLines()
-//                        .asSequence()  // uncomment to enable Turbo Boost!
                         .map { listToTransaction(it.split(",").toList()) }
                         .map { Transaction(it.Product, it.Price.toDouble(), it.State) }
                         .filter { it.price > 1000 }

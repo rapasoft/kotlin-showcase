@@ -23,7 +23,7 @@ private fun countNumberOfErrors(listOfEvents: List<String>) =
                 .map { it.toEvent() }
                 .filter { it.code >= 400 }
                 .map { it.timesOccured }
-                .reduce { acc, next -> acc + next } // the same as '.sum()'
+                .reduce { accumulator, next -> accumulator + next }
 
 fun main(args: Array<String>) {
     val numberOfErrorsOccurred = countNumberOfErrors(listOfEvents)
